@@ -10,7 +10,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/Checkout@v3
+              uses: actions/checkout@v4
 
             - name: Set up python
               uses: actions/setup-python@v5
@@ -34,7 +34,7 @@ jobs:
                 password: ${{secrets.DOCKER_TOKEN}}
 
             - name: Build and push
-              uses: docker/build-push@v6
+              uses: docker/build-push-action@v6
               with:
                 push: true
                 tags: meera1112/python-ci-cd:latest
